@@ -1,6 +1,7 @@
 const initialState = {
   pizzas: [
     {
+      id: 0,
       pizzaImage: 'https://media.dominos.ua/__sized__/menu/product_osg_image_mobile/2018/03/30/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%B8%D1%82%D0%B0_300dpi-thumbnail-960x960-70.jpg',
       name: 'Пицца Пепперони с томатами',
       ingredients: ['Cоус Domino\'s', 'Моцарелла'],
@@ -25,6 +26,7 @@ const initialState = {
       basePrice: 50
     },
     {
+      id: 1,
       pizzaImage: 'https://media.dominos.ua/__sized__/menu/product_osg_image_mobile/2018/03/30/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%B8%D1%82%D0%B0_300dpi-thumbnail-960x960-70.jpg',
       name: 'Пицца Техас',
       ingredients: ['Cоус Domino\'s', 'Моцарелла'],
