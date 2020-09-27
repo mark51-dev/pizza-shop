@@ -1,22 +1,26 @@
 import React from 'react';
-import {useSelector, shallowEqual} from 'react-redux';
+import {useSelector} from 'react-redux';
 import Pizza from "../../components/pizza/pizza";
+import CartPage from "../cart-page/cart-page";
 
 
 const PizzasPage = () => {
-  const { pizzas, availableSizesOfPizza } = useSelector(({products: {pizzas, availableSizesOfPizza}}) => {
+  const { pizzas, availableSizesOfPizza, cart } = useSelector(({products: {pizzas, availableSizesOfPizza}, cart}) => {
     return {
       pizzas,
-      availableSizesOfPizza
+      availableSizesOfPizza,
+      cart
     }
-  }, shallowEqual);
+  });
 
   const getPizzas = () => {
-    return pizzas.map((pizza, index) => (<Pizza key={index} pizza={pizza} availableSizesOfPizza={availableSizesOfPizza} />));
+    return pizzas.map((pizza, index) => (<Pizza key={index} pizza={pizza} availableSizesOfPizza={availableSizesOfPizza} cart={cart} />));
   };
 
   return (
     <div>
+      <CartPage cart={cart}/>
+      {console.log(cart)}
       { getPizzas() }
     </div>
   );

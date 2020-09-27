@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {addPizzaToCart} from "../../store/actions/cart";
 
 
-const Pizza = ({pizza: {id, name, ingredients, size, doughSize, basePrice, pizzaImage}, availableSizesOfPizza}) => {
+const Pizza = ({pizza: {id, name, ingredients, size, doughSize, basePrice, pizzaImage}, availableSizesOfPizza, cart: {cartProducts}}) => {
   const dispatch = useDispatch();
   const [pizzaSize, setPizzaSize] = useState(size.length ? size[0].pizzaSize: 0); // if the server returns an empty array (temp. solution)
   const [doughPizzaSize, setDoughSize] = useState(doughSize.length ? doughSize[0]: 0); // if the server returns an empty array (temp. solution)
@@ -81,7 +81,7 @@ const Pizza = ({pizza: {id, name, ingredients, size, doughSize, basePrice, pizza
         <span>{getTotalPrice()}</span>
       </div>
       <div>
-        <button onClick={() => onAddToCart(id)}>Add to cart</button>
+        <button onClick={() => onAddToCart(id)}>Add to cart{cartProducts[id] ? cartProducts[id].items.length: null}</button>
       </div>
     </div>
   );
