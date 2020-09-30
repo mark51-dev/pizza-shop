@@ -20,7 +20,6 @@ const PizzasPage = () => {
   return (
     <div>
       <CartPage cart={cart}/>
-      {console.log(cart)}
       { getPizzas() }
     </div>
   );
